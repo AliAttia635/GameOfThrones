@@ -1,18 +1,18 @@
 class Character {
-  int? id;
+  late int id;
   String? firstName;
   String? lastName;
-  String? fullName;
+  late String fullName;
   String? title;
   String? family;
   late String image;
   late String imageUrl;
 
   Character(
-      {this.id,
+      {required this.id,
       this.firstName,
       this.lastName,
-      this.fullName,
+      required this.fullName,
       this.title,
       this.family,
       required this.image,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:rickandmorty/business_logic_layer/cubit/characters_cubit.dart';
 import 'package:rickandmorty/constants/Strings.dart';
+import 'package:rickandmorty/data_layer/models/character_model.dart';
 import 'package:rickandmorty/data_layer/repository/characters.repository.dart';
 import 'package:rickandmorty/data_layer/web_services/character_api.dart';
 import 'package:rickandmorty/presentation_layer/screens/characters_details.dart';
@@ -28,7 +29,11 @@ class AppRouter {
         );
 
       case characterDetailsScreen:
-        return MaterialPageRoute(builder: (_) => CharacterDetailsScreen());
+        final character = settings.arguments as Character;
+        return MaterialPageRoute(
+            builder: (_) => CharacterDetailsScreen(
+                  character: character,
+                ));
     }
   }
 }

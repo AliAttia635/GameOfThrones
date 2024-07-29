@@ -21,4 +21,17 @@ class CharactersCubit extends Cubit<CharactersState> {
 
     return myCharacters;
   }
+
+//   Future<List<Character>> retriveAllCharacters() async {
+//   try {
+//     final characters = await charactersRepository.getAllCharacters();
+//     emit(CharacterLoaded(characters));
+//     myCharacters = characters;
+//     return myCharacters;
+//   } catch (e) {
+//     // Handle error and emit an error state if needed
+//     // emit(CharacterError());
+//     return [];
+//   }
+// }
 }
