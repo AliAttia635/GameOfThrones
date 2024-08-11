@@ -1,4 +1,4 @@
-# rickandmorty
+# Game Of Thrones
 
 A new Flutter project.
 

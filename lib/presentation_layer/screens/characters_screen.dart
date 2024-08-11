@@ -25,7 +25,7 @@ class _CharactersScreenState extends State<CharactersScreen> {
     super.initState();
     // ana kda bandah 3la el bloc
     BlocProvider.of<CharactersCubit>(context).retriveAllCharacters();
-    QuoteApi().fetchSpecificCharacterQuote();
+    // QuoteApi().fetchSpecificCharacterQuote();
   }
 
   void addSearchedForItemsRoSearchedList(String thesearchedCharacter) {

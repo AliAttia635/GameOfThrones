@@ -26,14 +26,14 @@ class CharactersApi {
     }
   }
 
-  Future<List<dynamic>> fetchSpecificCharacter(int id) async {
-    try {
-      Response? response = await dio?.get('Characters/$id');
-      print(response?.data.toString());
-      return response?.data;
-    } catch (e) {
-      print(e.toString());
-      return [];
-    }
-  }
+  // Future<List<dynamic>> fetchSpecificCharacter(int id) async {
+  //   try {
+  //     Response? response = await dio?.get('Characters/$id');
+  //     print(response?.data.toString());
+  //     return response?.data;
+  //   } catch (e) {
+  //     print(e.toString());
+  //     return [];
+  //   }
+  // }
 }

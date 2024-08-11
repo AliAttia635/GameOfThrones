@@ -1,12 +1,15 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:rickandmorty/data_layer/models/character_model.dart';
+import 'package:rickandmorty/data_layer/models/quotes_model.dart';
 import 'package:rickandmorty/data_layer/web_services/character_api.dart';
+import 'package:rickandmorty/data_layer/web_services/quote_api.dart';
 
 class CharactersRepository {
   // iam making object from CharactersApi to be able to call its function getAllCharacters()
   CharactersApi? charactersApi;
+  QuoteApi? quoteApi;
   CharactersRepository({
     this.charactersApi,
+    this.quoteApi,
   });
 
   Future<List<Character>> getAllCharacters() async {
@@ -16,5 +19,13 @@ class CharactersRepository {
     return characters
         .map((character) => Character.fromJson(character))
         .toList();
+  }
+
+  Future<Quote> getCharacterQuote(String charName) async {
+    final quotes = await QuoteApi().fetchSpecificCharacterQuote(charName);
+
+    // Access the first (and only) element in the list and parse it into a Quote object
+    final Map<String, dynamic> quoteData = quotes[0];
+    return Quote.fromJson(quoteData);
   }
 }

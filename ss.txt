@@ -1,0 +1,5 @@
+Hero widget for animation
+function .join ديه فانكشن بتستخدم مع الليست سترينج 
+
+    - implemented search logic locally
+

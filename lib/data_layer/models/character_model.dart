@@ -1,6 +1,6 @@
 class Character {
   late int id;
-  String? firstName;
+  late String firstName;
   String? lastName;
   late String fullName;
   String? title;
@@ -10,7 +10,7 @@ class Character {
 
   Character(
       {required this.id,
-      this.firstName,
+      required this.firstName,
       this.lastName,
       required this.fullName,
       this.title,
